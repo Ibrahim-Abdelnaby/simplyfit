@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_6" data-name="Rectangle 6" width="25" height="25" transform="translate(1336.909 32.909)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_1" data-name="Mask Group 1" transform="translate(-1336.909 -32.909)" clip-path="url(#clip-path)">
+    <path id="tiktok" d="M21.8,10.213A10.222,10.222,0,0,1,15.823,8.3V17A7.911,7.911,0,1,1,9,9.162v4.374A3.63,3.63,0,1,0,11.541,17V0h4.282a5.9,5.9,0,0,0,.092,1.08h0a5.946,5.946,0,0,0,2.623,3.9,5.907,5.907,0,0,0,3.26.978Z" transform="translate(1338.556 33)" fill="#fff"/>
+  </g>
+</svg>

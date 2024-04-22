@@ -1,0 +1,318 @@
+/* ========== Google Fonts ========== */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* ========== General CSS Rules ========== */
+:root {
+    /* ========== Colors ========== */
+    --primary-color: #46B359;
+    --secondary-color: #3579BC;
+    --gray-bg: #F2F2F2;
+    --gray-subTitle: #DDDDDD;
+    --gray-smallTitle: #9FA3A0;
+    --gray-placeholder: #706B6B;
+    --white-color: #fff;
+    --dark-color: #161616;
+  
+    /* ========== Font Family ========== */
+    --chakra-font: "Chakra Petch", sans-serif;
+    --poppins-font: "Poppins", sans-serif;
+  
+    /* ========== Font Size ========== */
+    --small-size: 0.833rem;
+    --medium-size: 1.2rem;
+    --h1-size: 4rem;
+  
+    /* ========== Font Weight ========== */
+    --semi-bold: 600;
+    --bold: 700;
+
+    /* ========== Flex Gap =========== */
+    --gap-1rem: 1rem;
+}
+
+/* ========== Global Rules ========== */
+.container {
+max-width: 1120px;
+padding-inline: 1rem;
+margin-inline: auto;
+}
+body {
+    min-height: 100svh;
+    font-family: var(--chakra-font);
+    color: var(--white-color);
+}
+.flex {
+    display: flex;
+}
+.flex-sb {
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-cn {
+    justify-content: center;
+    align-items: center;
+}
+.flex-col {
+    flex-direction: column;
+}
+a {
+    font-size: 0.9rem;
+}
+.transition {
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+i{
+    font-size: 1.2rem;
+}
+.none {
+    display: none;
+}
+.stretch-ltr {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+/* ========== Header ========== */
+#header {
+    background-color: rgba(22, 22, 22, 0.5);
+    color: var(--white-color);
+    position: fixed;
+    z-index: 999;
+    padding: var(--gap-1rem) 0;
+}
+#header .nav__menu {
+    gap: calc(var(--gap-1rem) * 2);
+}
+#header :is(a:hover) {
+    color: var(--primary-color);
+}
+#header .social {
+    gap: var(--gap-1rem);
+}
+.toggle__btn {
+    display: none; /*I need to handel it with JS*/
+    width: 35px;
+    height: 35px;
+    position: relative;
+}
+.toggle__btn > * {
+    position: absolute;
+}
+#header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(22,22,22,1) 100%);
+    opacity: 0.5;
+}
+/* ========== Hero ========== */
+#hero {
+    min-height: inherit;
+    background-image: url(../images/hero/hero_bg.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 90% 100%;
+    z-index: 1;
+}
+#hero .bg-shape{
+    background: linear-gradient(315deg, rgba(22,22,22,0.4) 0%, rgba(22,22,22,1) 100%);
+    min-height: inherit;
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+}
+#hero .bg-shape img {
+    height: calc(100% - (var(--gap-1rem)));
+    object-fit: contain;
+}
+#hero .container {
+    min-height: inherit;
+}
+#hero .hero__content {
+    min-height: inherit;
+    position: relative;
+    z-index: 4;
+    justify-content: center;
+    animation-delay: 0.5s;
+}
+#hero .hero__content p {
+    text-transform: uppercase;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+}
+#hero .hero__content p::before, #hero .hero__content p::after {
+    content: '';
+    display: inline-flex;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-image: url(../images/icons/dumbbell.svg);
+    background-repeat: no-repeat;
+}
+#hero .container p::after {
+    transform: scaleX(-1);
+}
+#hero .hero__title {
+    margin: 1rem 0;
+    width: 50%;
+}
+#hero .hero__title>* {
+    text-transform: uppercase;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+}
+#hero .hero__title h1 {
+    color: var(--secondary-color);
+}
+#hero .hero__title h1 span {
+    color: var(--primary-color);
+}
+#hero .hero__btns {
+    gap: calc(var(--gap-1rem) * 2);
+    align-items: center;
+    margin-top: 1rem;
+}
+#hero .primary__btn {
+    padding: var(--gap-1rem) calc(var(--gap-1rem) * 3);
+    border: 1px solid var(--white-color);
+    position: relative;
+    font-weight: 600;
+}
+#hero .primary__btn::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    bottom: -5px;
+    z-index: -1;
+    width: 50px;
+    height: 50px;
+    clip-path: polygon(0 0, 100% 100%, 0 100%);
+    background-color: var(--primary-color);
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+#hero .primary__btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+#hero .primary__btn:hover:before {
+    left: 0;
+    bottom: 0;
+}
+#hero .secondary__btn {
+    gap: 1rem;
+    align-items: center;
+}
+#hero .secondary__btn :is(span, .icon) {
+    transition: opacity 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -ms-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+}
+#hero .secondary__btn:hover :is(span, .icon) {
+    opacity: 0.3;
+}
+#hero .secondary__btn .icon {
+    color: var(--primary-color);
+    font-size: calc(var(--gap-1rem) * 3);
+}
+#hero .secondary__btn span {
+    font-family: var(--poppins-font);
+    color: var(--gray-smallTitle);
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+#hero .secondary__btn a {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+#hero .btn__text {
+    flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1536px) {
+    /* ========== Hero ========== */
+    #hero {
+        background-position: 90%;
+    }
+    #hero .bg-shape img {
+        display: none;
+    }
+    #hero .hero__content {
+        align-items: center;
+    }
+    #hero .hero__content .hero__title {
+        width: 100%;
+    }
+    #hero .hero__content .hero__title>* {
+        text-align: center;
+    }
+    #hero .hero__content {
+        animation-delay: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /* ========== Header ========== */
+    #header :is(.nav__menu, .social){
+        display: none;
+    }
+    #header .toggle__btn {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 640px){
+    /* ========== Hero ========== */
+    #hero {
+        background-position: 85%;
+    }
+    #hero .hero__content .hero__title>* {
+        font-size: 2.5rem;
+    }
+    #hero .hero__btns {
+        flex-direction: column;
+    }
+    #hero .hero__btns .primary__btn{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
